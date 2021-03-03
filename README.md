@@ -6,7 +6,7 @@
 from visual import *
 from visual.graph import *
 
-## Physical constants.
+## Physical constants
 mass    = 1.0 # mass of pendulum
 length  = 0.25*9.8 # lendth of pendulum
 damping = 0.1 # damping coefficient
@@ -15,7 +15,7 @@ grav    = 9.8 # magnitude of graviational field
 gdisplay(x=200,y=400)
 fdvstime = gcurve(color=color.white)
 
-## Differential equation for second derivative of theta.
+## Differential equation for second derivative of theta:
 def thetadotdot(theta, thetadot, time):
 
     pi = 3.14159265359
@@ -39,18 +39,18 @@ def thetadotdot(theta, thetadot, time):
 ##        fd = 0.0
 
 
-# The diff eq
+# The differential equation
     thetadotdot = -grav/length*sin(theta) - damping*thetadot + fd
     return thetadotdot
 
-## Initialize run.
+## Initialize run
 time     = 0.0
 tmax     = 300
 dt       = 0.005
 theta    = 0.5
 thetadot = -0.02
 
-## Create visuals.
+## Creating visuals
 gdisplay(x=0,y=0,title = 'theta vs. time')
 thetavstime = gcurve(color=color.green)
 gdisplay(x=500,y=400,title = 'thetadot vs. theta')
