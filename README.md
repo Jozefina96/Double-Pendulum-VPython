@@ -62,7 +62,7 @@ rod = cylinder(pos=(0,0,0),axis=bob.pos,radius=bob.radius*0.1)
 rod0 = cylinder(pos=(0,0,0),axis=bob.pos,radius=bob.radius*0.1,
                 color=color.red,
                 opacity = 0.25) # Reference line.
-
+## making the pendulum move with time
 while time < tmax:
     rate(100)
     thetadot = thetadot + thetadotdot(theta, thetadot, time)*dt
@@ -70,5 +70,6 @@ while time < tmax:
     time     = time + dt
     bob.pos  = (length*sin(theta),-length*cos(theta),0)
     rod.axis = bob.pos
+    #making plots
     thetavstime.plot(pos=(time,theta))
     thetadotvstheta.plot(pos=(theta,thetadot))
