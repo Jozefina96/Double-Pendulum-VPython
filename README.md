@@ -1,4 +1,7 @@
 # Double-Pendulum-VPython
+# This code should be run on "VIDLE" 
+# This code is for sigle pendulum, which will be later developed into a double pendulum
+
 
 from visual import *
 from visual.graph import *
@@ -17,9 +20,9 @@ def thetadotdot(theta, thetadot, time):
 
     pi = 3.14159265359
 
-##    fd = 0.0 ## Uncomment if you're taking out driving force!
+##    fd = 0.0 ## driving force which can be added to the system
 
-# Calculate driving force.
+# Calculating the driving force.
     period = pi/2.0
 ##    fd = 5.0*cos(6.28*time/period)
     if (abs(time%period) < period/2.0):
@@ -36,7 +39,7 @@ def thetadotdot(theta, thetadot, time):
 ##        fd = 0.0
 
 
-# The diff eq!
+# The diff eq
     thetadotdot = -grav/length*sin(theta) - damping*thetadot + fd
     return thetadotdot
 
